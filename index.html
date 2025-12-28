@@ -3,11 +3,15 @@
       function checkDate() {
         var currentDate = new Date()
         const currentYear = currentDate.getYear();
-        currentDate = currentDate.getYear();
-        const christmasDay = Date.parse(currentYear.toString()+"-12-25T00:00:00Z").getTime();
-        const newYearsEve = Date.parse(currentYear.toString()+"-12-31T23:59:59Z").getTime();
-        const newYear = Date.parse(currentYear.toString()+"-01-01T00:00:00Z").getTime();
-        const endOfChristmas = Date.parse(currentYear.toString()+"-01-06T23:59:59Z").getTime();
+        currentDate = currentDate.getTime();
+        var christmasDay = Date.parse(currentYear.toString()+"-12-25T00:00:00Z");
+        var newYearsEve = Date.parse(currentYear.toString()+"-12-31T23:59:59Z");
+        var newYear = Date.parse(currentYear.toString()+"-01-01T00:00:00Z");
+        var endOfChristmas = Date.parse(currentYear.toString()+"-01-06T23:59:59Z");
+        christmasDay = christmasDay.getTime();
+        newYearsEve = newYearsEve.getTime();
+        newYear = newYear.getTime();
+        endOfChristmas = endOfChristmas.getTime();
         const isItChristmas = ((currentDate >= christmasDay) && (currentDate <= newYearsEve)) || ((currentDate >= newYear) && (currentDate <= endOfChristmas));
         alert(isItChristmas);
       }
