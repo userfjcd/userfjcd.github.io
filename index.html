@@ -1,13 +1,19 @@
-<html>
-  <head>
+<html><head>
     <script>
       function checkDate() {
-        var date = (new Date()).getTime();
-        alert(date);
+        const currentDate = new Date();
+        const currentYear = currentDate.getYear();
+        const christmasDay = Date.parse(currentYear.toString()+"-12-25T00:00:00Z");
+        const newYearsEve = Date.parse(currentYear.toString()+"-12-31T23:59:59Z");
+        const newYear = Date.parse(currentYear.toString()+"-01-01T00:00:00Z");
+        const endOfChristmas = Date.parse(currentYear.toString()+"-01-06T23:59:59Z");
+        const isItChristmas = ((currentDate >= christmasDay) && (currentDate <= newYearsEve)) || ((currentDate >= newYear) && (currentDate <= endOfChristmas));
+        alert(isItChristmas);
       }
     </script>
   </head>
   <body>
     <h1>Hello</h1>
-  </body>
-</html>
+    <button onclick="checkDate()">Hola</button>
+
+</body></html>
