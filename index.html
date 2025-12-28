@@ -4,10 +4,10 @@
         var currentDate = new Date()
         const currentYear = currentDate.getYear();
         currentDate = currentDate.getTime();
-        var christmasDay = Date.parse(currentYear.toString()+"-12-25T00:00:00Z");
-        var newYearsEve = Date.parse(currentYear.toString()+"-12-31T23:59:59Z");
-        var newYear = Date.parse(currentYear.toString()+"-01-01T00:00:00Z");
-        var endOfChristmas = Date.parse(currentYear.toString()+"-01-06T23:59:59Z");
+        var christmasDay = new Date(currentYear.toString()+"-12-25T00:00:00Z");
+        var newYearsEve = new Date(currentYear.toString()+"-12-31T23:59:59Z");
+        var newYear = new Date(currentYear.toString()+"-01-01T00:00:00Z");
+        var endOfChristmas = new Date(currentYear.toString()+"-01-06T23:59:59Z");
         christmasDay = christmasDay.getTime();
         newYearsEve = newYearsEve.getTime();
         newYear = newYear.getTime();
