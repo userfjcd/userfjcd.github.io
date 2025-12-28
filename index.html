@@ -1,8 +1,8 @@
 <html><head>
     <script>
-      function checkDate() {
-        var currentDate = new Date()
-        const currentYear = currentDate.getYear();
+ function checkDate() {
+        var currentDate = new Date(Date.now())
+        const currentYear = currentDate.getYear() + 1900;
         currentDate = currentDate.getTime();
         var christmasDay = new Date(currentYear.toString()+"-12-25T00:00:00Z");
         var newYearsEve = new Date(currentYear.toString()+"-12-31T23:59:59Z");
