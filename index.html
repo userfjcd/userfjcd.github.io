@@ -13,7 +13,7 @@
         newYear = newYear.getTime();
         endOfChristmas = endOfChristmas.getTime();
         const isItChristmas = ((currentDate >= christmasDay) && (currentDate <= newYearsEve)) || ((currentDate >= newYear) && (currentDate <= endOfChristmas))?"SÍ":"NO";
-        Document.getElementById("isItChristmas").setValue(isItChristmas");
+        document.getElementById("isItChristmas").innerText = isItChristmas;
       }
     </script>
   </head>
