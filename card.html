@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html,body{height:100%;}html{display:table;margin:auto;}body{display:table-cell;vertical-align:middle;}
+body{font-size: 80px}
+table,th,td{border:1px solid black}
+</style>
+<script>
+let numbersLeft = [];
+for (let i = 1; i <= 90; i++) {
+	numbersLeft.push(i);
+}
+
+function randomChoice(array) {
+	let choice = Math.floor(Math.random()*array.length);
+	return array.splice(choice, 1);
+}
+
+function main() {
+for (let i = 0; i < 3; i++) {
+let row = [0, 0, 0];
+for (let j = 0; j < 5; j++) {
+row.push(randomChoice(numbersLeft));
+}
+for (let j = 0; j < 8; j++) {
+let num = randomChoice(row);
+let cell = document.getElementById(`row${i}col${j}`);
+cell.style.color = "black";
+cell.style.backgroundColor = "white";
+cell.style.textAlign = "center";
+if (num == 0) {
+cell.style.backgroundColor = "blue";
+cell.style.color = "blue";
+cell.innerText = "00";
+} else {
+cell.innerText = num;
+cell.onclick = function() {
+if (cell.style.color === "black") {
+cell.style.color = "white";
+cell.style.backgroundColor = "blue";
+} else {
+cell.style.color = "black";
+cell.style.backgroundColor = "white";
+}
+}
+}
+}	
+}
+}
+
+document.addEventListener("DOMContentLoaded", main);
+</script>
+</head>
+<body>
+<table>
+<tr>
+	<td id="row0col0"></td>
+	<td id="row0col1"></td>
+	<td id="row0col2"></td>
+	<td id="row0col3"></td>
+	<td id="row0col4"></td>
+	<td id="row0col5"></td>
+	<td id="row0col6"></td>
+	<td id="row0col7"></td>	
+</tr>
+<tr>
+        <td id="row1col0"></td>
+        <td id="row1col1"></td>
+        <td id="row1col2"></td>
+        <td id="row1col3"></td>
+        <td id="row1col4"></td>
+        <td id="row1col5"></td>
+        <td id="row1col6"></td>
+        <td id="row1col7"></td>
+</tr>
+<tr>
+        <td id="row2col0"></td>
+        <td id="row2col1"></td>
+        <td id="row2col2"></td>
+        <td id="row2col3"></td>
+        <td id="row2col4"></td>
+        <td id="row2col5"></td>
+        <td id="row2col6"></td>
+        <td id="row2col7"></td>
+</tr>
+</table>
+</body>
+</html>
